@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --color-primary: #835bfc;
+    --color-primary-light: #f1ecfe;
+    --color-primary-bg: #835bfc;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    font-family: "Barlow", sans-serif;
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    /* background-color: var(--color-primary-light); */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.header-container {
+    max-width: 1248px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.header-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.header-logo-text {
+    color: var(--color-primary);
+}
+
+.header-right {
+    display: flex;
+}
+
+.nav-menu {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-item {
+    padding: 24px 12px;
+}
+
+.nav-link {
+    color: var(--color-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:hover>.chevron {
+    color: var(--color-primary);
+}
+
+.chevron {
+    display: inline-flex;
+    transition: 0.3s ease-in-out;
+    cursor: pointer
+}
+
+.chevron.rotate {
+    transform: rotate(180deg);
+    transition: 0.3s ease-in-out;
+}
+
+.nav-item-dropdown {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: var(--color-tertiary);
+    border: 1px solid black;
+    top: 60px;
+    width: 200px;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nav-item-dropdown.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.nav-item-dropdown>.nav-item {
+    padding: 10px;
+}
+
+.banner-container {
+    background-color: var(--color-primary);
+    /* background-image: linear-gradient(to right, var(--color-primary-bg), var(--color-primary)); */
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.banner-content {
+    max-width: 1248px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    max-width: 600px;
+    line-height: 1.2;
+    color: var(--color-tertiary);
+}
+
+.banner-desc {
+    color: var(--color-tertiary);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.banner-btn {
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    width: fit-content;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+.banner-btn:hover {
+    /* opacity: 0.8; */
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.content-block {
+    margin-bottom: 40px;
+    min-height: 200px;
+}
+
+.content-block-container {
+    max-width: 1248px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.flex-container {
+    display: flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.content-block-left {
+    flex: 1 1 50%;
+    background-color: var(--color-secondary);
+}
+
+.content-block-right {
+    flex: 1 1 50%;
+    background-color: var(--color-primary-light);
+}
+
+.purple-bg {
+    background-color: var(--color-primary-light);
+}
+
+
+.content-block-title,
+.content-block-desc {
+    color: (var(--color-secondary));
+    text-align: center;
+}
+
+.content-block-title {
+    font-size: 2.5rem;
+}
+
+.content-block-desc {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-container {
+    background-color: var(--color-primary-light);
+    flex: 1 1 33%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.card-icon {
+    height: 64px;
+    width: 64px;
+}
+
+.card-title {
+    color: var(--color-primary);
+    font-size: 1.75rem;
+}
+
+.card-desc {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.card-link {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.card-link::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../assets/icons/arrow-right.svg") no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card-link:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.footer {
+    background-color: var(--color-primary-light);
+    height: 300px;
+}
