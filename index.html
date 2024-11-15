@@ -15,81 +15,293 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="header-left">
-                <img src="assets/icons/destiny-icon.png" class="header-logo">
-                <h2 class="header-logo-text">Financial Calculator</h2>
+            <div class="header-container__left">
+                <img src="assets/icons/destiny-icon.png" class="header__logo" alt="Website logo">
+                <h2 class="header__logo-text">Financial Calculator</h2>
             </div>
-            <div class="header-right">
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item" id="navDropdownBtn"><a href="#" class="nav-link">Calculators</a>
-                        <span class="chevron">▼</span>
-                    </li>
-                    <ul class="nav-item-dropdown">
-                        <li class="nav-item"><a href="fd-calculator.html" class="nav-link">FD Calculator</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">FD Calculator</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">FD Calculator</a></li>
+            <div class="header-container__right">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                        <li class="header__nav-item" id="navDropdownBtn">
+                            <p class="header__nav-link">Calculators</p>
+                            <img class="chevron" src="assets/icons/chevron.svg" alt="Chevron Icon">
+                        </li>
+                        <ul class="header__nav-dropdown">
+                            <li class="header__nav-item"><a href="fd-calculator.html" class="header__nav-link">FD
+                                    Calculator</a></li>
+                            <li class="header__nav-item"><a href="rd-calculator.html" class="header__nav-link">RD
+                                    Calculator</a></li>
+                            <li class="header__nav-item"><a href="emi-calculator.html" class="header__nav-link">EMI
+                                    Calculator</a></li>
+                        </ul>
+                        </li>
+                        <li class="header__nav-item"><a href="why-invest.html" class="header__nav-link">Why Invest</a>
+                        </li>
+                        <li class="header__nav-item"><a href="other-projects.html" class="header__nav-link">Other
+                                Projects</a></li>
                     </ul>
-                    </li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Other Projects</a></li>
-                </ul>
+                </nav>
             </div>
         </div>
     </header>
-    <div class="banner-container">
-        <div class="banner-content">
-            <h2 class="banner-title">Start your financial planning today!</h2>
-            <p class="banner-desc">Use our simple and easy to use calculators to help plan your financial goals</p>
-            <a class="banner-btn">Calculators</a>
+    <div class="banner">
+        <div class="banner-container">
+            <div class="banner-container__left">
+                <h2 class="banner__title">Start your financial planning today!</h2>
+                <p class="banner__desc">Use our simple and easy to use calculators to help plan your financial goals</p>
+                <a class="banner__btn">Calculators</a>
+            </div>
+            <div class="banner-container__right">
+                <img class="banner__img" src="assets/images/tree.svg" alt="Tree Image">
+            </div>
         </div>
     </div>
-    <div class="content-block">
-        <div class="content-block-container flex-container">
-            <div class="content-block-left"></div>
-            <div class="content-block-right"></div>
+    <section class="content-block">
+        <div class="content-block-container teaser">
+            <div class="content-block__left">
+                <img class="teaser__img" src="assets/images/teaser-2.jpg" alt="Piggy Bank">
+            </div>
+            <div class="content-block__right">
+                <h2 class="teaser__title">Why Invest?</h2>
+                <p class="teaser__desc">Investing is an effective way to have your money work for you and build wealth.
+                    Holding cash and bank savings accounts are considered safe strategies, but investing your money
+                    allows it to grow in value over time with the benefit of compounding and long-term growth.</p>
+                <a class="teaser__btn" href="why-invest.html">
+                    <span class="teaser__btn-text">Learn More</span>
+                    <img class="teaser__btn-icon" src="assets/icons/arrow-right.svg">
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="content-block purple-bg">
+    </section>
+    <section class="content-block grey-bg">
         <div class="content-block-container">
-
-        </div>
-    </div>
-    <div class="content-block">
-        <div class="content-block-container">
-            <h2 class="content-block-title">Calculators</h2>
-            <p class="content-block-desc">Check out our calculators</p>
+            <h2 class="content-block__title">What do you invest for?</h2>
+            <p class="content-block__desc">Here are some examples that can help set you a goal</p>
             <div class="cards">
-                <div class="card-container">
+                <div class="card-container alternate">
                     <div class="card">
-                        <img class="card-icon" src="assets/icons/calculator.svg">
-                        <h2 class="card-title">FD Calculator</h2>
-                        <p class="card-desc">Check out the FD calculator here</p>
-                        <a class="card-link">Calculate Now</a>
+                        <div class="card__header">
+                            <h2 class="card__title">Emergency Fund</h2>
+                            <img class="card__icon" src="assets/icons/money.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                     </div>
                 </div>
-                <div class="card-container">
+                <div class="card-container alternate">
                     <div class="card">
-                        <img class="card-icon" src="assets/icons/bank.svg">
-                        <h2 class="card-title">RD Calculator</h2>
-                        <p class="card-desc">Check out the RD calculator here</p>
-                        <a class="card-link">Calculate Now</a>
+                        <div class="card__header">
+                            <h2 class="card__title">House</h2>
+                            <img class="card__icon" src="assets/icons/house.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                     </div>
                 </div>
-                <div class="card-container">
+                <div class="card-container alternate">
                     <div class="card">
-                        <img class="card-icon" src="assets/icons/piggy-bank.svg">
-                        <h2 class="card-title">EMI Calculator</h2>
-                        <p class="card-desc">Check out the EMI calculator here</p>
-                        <a class="card-link">Calculate Now</a>
+                        <div class="card__header">
+                            <h2 class="card__title">Car</h2>
+                            <img class="card__icon" src="assets/icons/car.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-container alternate">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Kids</h2>
+                            <img class="card__icon" src="assets/icons/kids.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-container alternate">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Vacation</h2>
+                            <img class="card__icon" src="assets/icons/plane.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-container alternate">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Retirement</h2>
+                            <img class="card__icon" src="assets/icons/retirement.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-container alternate">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Marriage</h2>
+                            <img class="card__icon" src="assets/icons/marriage.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-container alternate">
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Education</h2>
+                            <img class="card__icon" src="assets/icons/education.svg">
+                        </div>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="content-block">
+        <div class="content-block-container feature-list">
+            <div class="content-block-left"><img class="image-left" src="assets/images/handshake.jpg"></div>
+            <div class="content-block-right">
+                <h2 class="feature-list__title">Why use our Calculators</h2>
+                <div class="feature-list__list">
+                    <div class="feature-list__item">
+                        <div class="feature-list__item-number">1</div>
+                        <div class="feature-list__item-right">
+                            <h2 class="feature-list__item-title">Title</h2>
+                            <p class="feature-list__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed
+                                do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list__item">
+                        <div class="feature-list__item-number">2</div>
+                        <div class="feature-list__item-right">
+                            <h2 class="feature-list__item-title">Title</h2>
+                            <p class="feature-list__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed
+                                do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list__item">
+                        <div class="feature-list__item-number">3</div>
+                        <div class="feature-list__item-right">
+                            <h2 class="feature-list__item-title">Title</h2>
+                            <p class="feature-list__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed
+                                do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-block" id="calculators">
+        <div class="content-block-container">
+            <h2 class="content-block__title">Calculators</h2>
+            <p class="content-block__desc">Check out our calculators</p>
+            <div class="cards">
+                <div class="card-container">
+                    <div class="card">
+                        <img class="card__icon" src="assets/icons/calculator.svg">
+                        <h2 class="card__title">FD Calculator</h2>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="card-link"><span class="card-link-text">Calculate Now</span><img
+                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <img class="card__icon" src="assets/icons/bank.svg">
+                        <h2 class="card__title">RD Calculator</h2>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="card-link"><span class="card-link-text">Calculate Now</span><img
+                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <img class="card__icon" src="assets/icons/piggy-bank.svg">
+                        <h2 class="card__title">EMI Calculator</h2>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="card-link"><span class="card-link-text">Calculate Now</span><img
+                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer">
         <div class="footer-container">
-
+            <div class="footer__top">
+                <div class="footer__top-left">
+                    <img src="assets/icons/destiny-icon.png" class="footer__logo" alt="Website Logo">
+                    <h2 class="footer__logo-text">Financial Calculator</h2>
+                </div>
+                <div class="footer__top-right">
+                    <div class="footer__column">
+                        <a href="index.html" class="footer__column-title">Home</a>
+                    </div>
+                    <div class="footer__column">
+                        <p class="footer__column-title">Calculators</p>
+                        <a href="rd-calculator.html" class="footer__column-item">RD Calculator</a>
+                        <a href="fd-calculator.html" class="footer__column-item">FD Calculator</a>
+                        <a href="emi-calculator.html" class="footer__column-item">EMI Calculator</a>
+                    </div>
+                    <div class="footer__column">
+                        <a href="why-invest.html" class="footer__column-title">Why Invest</a>
+                    </div>
+                    <div class="footer__column">
+                        <a href="other-projects.html" class="footer__column-title">Other Projects</a>
+                        <a href="https://karthik-2906.github.io/verity-simulator/" target="_blank"
+                            class="footer__column-item">Destiny 2 Verity Simulator</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__icons">
+                    <a href="https://github.com/karthik-2906/finance-calculator" target="_blank"
+                        class="footer__icon-container"><img class="footer__icon" src="assets/icons/github.svg"></a>
+                    <a href="https://www.linkedin.com/in/karthik-sivakumar-b2b81a211/" target="_blank"
+                        class="footer__icon-container"><img class="footer__icon" src="assets/icons/linkedin.svg"></a>
+                    <a href="assets/documents/Karthik Sivakumar.pdf" target="_blank" class="footer__icon-container"><img
+                            class="footer__icon" src="assets/icons/resume.svg"></a>
+                </div>
+                <div class="footer__text">
+                    © Copyright. All rights reserved
+                </div>
+            </div>
         </div>
     </footer>
     <script src="js/script.js"></script>
