@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Finance Calculator</title>
+    <title>FD Calculator</title>
     <meta name="description" content="A simple website to help calculate different financial instruments">
     <meta name="author" content="karthik-2906">
 
@@ -15,68 +15,241 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="header-left">
-                <img src="assets/icons/destiny-icon.png" class="header-logo">
-                <h2 class="header-logo-text">FD Calculator</h2>
+            <div class="header-container__left">
+                <img src="assets/icons/destiny-icon.png" class="header__logo" alt="Website logo">
+                <h2 class="header__logo-text">Financial Calculator</h2>
             </div>
-            <div class="header-right">
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item" id="navDropdownBtn"><a href="#" class="nav-link">Calculators</a>
-                        <span class="chevron">▼</span></li>
-                        <ul class="nav-item-dropdown">
-                            <li class="nav-item"><a href="#" class="nav-link">FD Calculator</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">FD Calculator</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">FD Calculator</a></li>
+            <div class="header-container__right">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                        <li class="header__nav-item" id="navDropdownBtn">
+                            <p class="header__nav-link">Calculators</p>
+                            <img class="chevron" src="assets/icons/chevron.svg" alt="Chevron Icon">
+                        </li>
+                        <ul class="header__nav-dropdown">
+                            <li class="header__nav-item"><a href="fd-calculator.html" class="header__nav-link">FD
+                                    Calculator</a></li>
+                            <li class="header__nav-item"><a href="rd-calculator.html" class="header__nav-link">RD
+                                    Calculator</a></li>
+                            <li class="header__nav-item"><a href="emi-calculator.html" class="header__nav-link">EMI
+                                    Calculator</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Other Projects</a></li>
-                </ul>
+                        </li>
+                        <li class="header__nav-item"><a href="why-invest.html" class="header__nav-link">Why Invest</a>
+                        </li>
+                        <li class="header__nav-item"><a href="other-projects.html" class="header__nav-link">Other
+                                Projects</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
-    <div class="banner-container">
-        <div class="banner-content">
-            <h2 class="banner-title">Start your financial planning today!</h2>
-            <p class="banner-desc">Use our simple and easy to use calculators to help plan your financial goals</p>
-            <a class="banner-btn">Calculators</a>
+    <div class="banner">
+        <div class="banner-container">
+            <div class="banner-container__left">
+                <h2 class="banner__title">FD Calculator</h2>
+                <p class="banner__desc">Savings Made Simple – Find Out Your Fixed Deposit Earnings Instantly!</p>
+                <a class="banner__btn">Calculators</a>
+            </div>
+            <div class="banner-container__right">
+                <img class="banner__img" src="assets/images/tree.svg" alt="Tree Image">
+            </div>
         </div>
     </div>
-    <div class="content-block">
+    <section class="content-block">
         <div class="content-block-container">
-            <h2 class="content-block-title">Calculators</h2>
-            <p class="content-block-desc">Check out our calculators</p>
+            <h2 class="content-block__title">FD Calculator</h2>
+            <div class="calculator-container">
+                <div class="calculator">
+                    <div class="calculator__item">
+                        <div class="calculator__item-top">
+                            <p class="calculator__item-label">Investment</p>
+                            <div class="calculator__item-input">
+                                <div class="calculator-error-container" id="totalInvestmentErrorMsg">
+                                    <img class="calculator-error" src="assets/icons/error.svg" alt="Information icon">
+                                    <div class="calculator-error-message">
+                                        <p>Enter a value above 5000</p>
+                                    </div>
+                                </div>
+                                <div class="calculator__item-input-container">
+                                    <span class="calculator__item-icon">₹</span>
+                                    <input type="number" id="totalInvestmentInput" class="calculator__input-box" min="0"
+                                        max="10000000" placeholder="0" value="100000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator__item-bottom">
+                            <input type="range" id="totalInvestmentSlider" class="calculator__slider" min="5000"
+                                max="10000000" value="100000">
+                            <div class="calculator__slider-thumb"></div>
+                            <div class="calculator__slider-progress"></div>
+                        </div>
+                    </div>
+                    <div class="calculator__item">
+                        <div class="calculator__item-top">
+                            <p class="calculator__item-label">Rate of interest</p>
+                            <div class="calculator__item-input">
+                                <div class="calculator-error-container" id="interestErrorMsg">
+                                    <img class="calculator-error" src="assets/icons/error.svg" alt="Information icon">
+                                    <div class="calculator-error-message">
+                                        <p>Minimum value is 1</p>
+                                    </div>
+                                </div>
+                                <div class="calculator__item-input-container">
+                                    <input type="number" id="interestInput" class="calculator__input-box" min="1"
+                                        max="15" placeholder="0" value="1">
+                                    <span class="calculator__item-icon">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator__item-bottom">
+                            <input type="range" id="interestSlider" class="calculator__slider" min="10" max="150"
+                                value="1">
+                            <div class="calculator__slider-thumb"></div>
+                            <div class="calculator__slider-progress"></div>
+                        </div>
+                    </div>
+                    <div class="calculator__item">
+                        <div class="calculator__item-top">
+                            <div class="calculator__item-top-left">
+                                <p class="calculator__item-label">Time Period</p>
+                                <div class="calculator__time-btn-container">
+                                    <button class="calculator__time-btn">Years</button>
+                                    <img class="chevron" src="assets/icons/chevron-black.svg" alt="Chevron Icon">
+                                    <ul class="calculator__time-btn-dropdown">
+                                        <li class="calculator__time-btn-item">Years</li>
+                                        <li class="calculator__time-btn-item">Months</li>
+                                        <li class="calculator__time-btn-item">Days</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="calculator__item-input">
+                                <div class="calculator-error-container" id="timeErrorMsg">
+                                    <img class="calculator-error" src="assets/icons/error.svg" alt="Information icon">
+                                    <div class="calculator-error-message">
+                                        <p>Minimum value is 1</p>
+                                    </div>
+                                </div>
+                                <div class="calculator__item-input-container">
+                                    <input type="number" id="timeInput" class="calculator__input-box" min="1" max="25"
+                                        placeholder="0" value="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator__item-bottom">
+                            <input type="range" id="timeSlider" class="calculator__slider" min="1" max="25" value="1">
+                            <div class="calculator__slider-thumb"></div>
+                            <div class="calculator__slider-progress"></div>
+                        </div>
+                    </div>
+                    <div class="calculator__results-container">
+                        <div class="calculator__results">
+                            <p class="calculator__results-text">Invested Amount</p>
+                            <p class="calculator__results-number">₹ 1,00,000</p>
+                        </div>
+                        <div class="calculator__results">
+                            <p class="calculator__results-text">Estimated Returns</p>
+                            <p class="calculator__results-number">₹ 32,500</p>
+                        </div>
+                        <div class="calculator__results">
+                            <p class="calculator__results-text">Total Amount</p>
+                            <p class="calculator__results-number">₹ 1,32,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-right">
+                    <div class="calculator__chart-keys">
+                        <p class="calculator__chart-key-label">Interest</p>
+                        <p class="calculator__chart-key-label">Investment</p>
+                    </div>
+                    <div class="calculator__donut-chart-container">
+                        <canvas class="calculator-donut-chart"></canvas>
+                    </div>
+                    <button class="calculator__export-btn" disabled>Export to Excel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-block grey-bg">
+        <div class="content-block-container">
+            <h2 class="content-block__title">What are fixed deposits (FD)?</h2>
+            <p class="content-block__desc">Here are some examples that can help set you a goal</p>
+        </div>
+    </section>
+    <section class="content-block" id="calculators">
+        <div class="content-block-container">
+            <h2 class="content-block__title">Other Calculators</h2>
+            <p class="content-block__desc">Check out some other calculators</p>
             <div class="cards">
                 <div class="card-container">
                     <div class="card">
-                        <img class="card-icon" src="assets/icons/calculator.svg">
-                        <h2 class="card-title">FD Calculator</h2>
-                        <p class="card-desc">Check out the FD calculator here</p>
-                        <a class="card-link">Calculate Now</a>
+                        <img class="card__icon" src="assets/icons/bank.svg">
+                        <h2 class="card__title">RD Calculator</h2>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="card-link"><span class="card-link-text">Calculate Now</span><img
+                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
                     </div>
                 </div>
                 <div class="card-container">
                     <div class="card">
-                        <img class="card-icon" src="assets/icons/bank.svg">
-                        <h2 class="card-title">RD Calculator</h2>
-                        <p class="card-desc">Check out the RD calculator here</p>
-                        <a class="card-link">Calculate Now</a>
-                    </div>
-                </div>
-                <div class="card-container">
-                    <div class="card">
-                        <img class="card-icon" src="assets/icons/piggy-bank.svg">
-                        <h2 class="card-title">EMI Calculator</h2>
-                        <p class="card-desc">Check out the EMI calculator here</p>
-                        <a class="card-link">Calculate Now</a>
+                        <img class="card__icon" src="assets/icons/piggy-bank.svg">
+                        <h2 class="card__title">EMI Calculator</h2>
+                        <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="card-link"><span class="card-link-text">Calculate Now</span><img
+                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer__top">
+                <div class="footer__top-left">
+                    <img src="assets/icons/destiny-icon.png" class="footer__logo" alt="Website Logo">
+                    <h2 class="footer__logo-text">Financial Calculator</h2>
+                </div>
+                <div class="footer__top-right">
+                    <div class="footer__column">
+                        <a href="index.html" class="footer__column-title">Home</a>
+                    </div>
+                    <div class="footer__column">
+                        <p class="footer__column-title">Calculators</p>
+                        <a href="rd-calculator.html" class="footer__column-item">RD Calculator</a>
+                        <a href="fd-calculator.html" class="footer__column-item">FD Calculator</a>
+                        <a href="emi-calculator.html" class="footer__column-item">EMI Calculator</a>
+                    </div>
+                    <div class="footer__column">
+                        <a href="why-invest.html" class="footer__column-title">Why Invest</a>
+                    </div>
+                    <div class="footer__column">
+                        <a href="other-projects.html" class="footer__column-title">Other Projects</a>
+                        <a href="https://karthik-2906.github.io/verity-simulator/" target="_blank"
+                            class="footer__column-item">Destiny 2 Verity Simulator</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__icons">
+                    <a href="https://github.com/karthik-2906/finance-calculator" target="_blank"
+                        class="footer__icon-container"><img class="footer__icon" src="assets/icons/github.svg"></a>
+                    <a href="https://www.linkedin.com/in/karthik-sivakumar-b2b81a211/" target="_blank"
+                        class="footer__icon-container"><img class="footer__icon" src="assets/icons/linkedin.svg"></a>
+                    <a href="assets/documents/Karthik Sivakumar.pdf" target="_blank" class="footer__icon-container"><img
+                            class="footer__icon" src="assets/icons/resume.svg"></a>
+                </div>
+                <div class="footer__text">
+                    © Copyright. All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/fd-calculator.js"></script>
 </body>
 
 </html>
