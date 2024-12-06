@@ -13,18 +13,19 @@
             this.navDropdown.classList.toggle("show");
             this.chevron.classList.toggle("rotate");
         }
-        
+
         scroll() {
             this.calculatorsSection.scrollIntoView({
                 behavior: 'smooth'
-              });
+            });
         }
 
         bindingEvents() {
-            this.navDropdownBtn.addEventListener('click', ()=> this.toggleNavDropdown());
-            this.bannerBtn.addEventListener('click', ()=> this.scroll());
-            this.footerBtn.addEventListener('click', ()=> this.scroll());
+            this.navDropdownBtn.addEventListener('click', () => this.toggleNavDropdown());
+            this.bannerBtn.addEventListener('click', () => this.scroll());
+            this.footerBtn.addEventListener('click', () => this.scroll());
         }
+
 
         init() {
             this.bindingEvents();
