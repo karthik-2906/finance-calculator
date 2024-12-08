@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FD Calculator</title>
+    <title>savr - FD Calculator</title>
     <meta name="description" content="A simple website to help calculate different financial instruments">
     <meta name="author" content="karthik-2906">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/icons/logo-2.svg" type="image/x-icon">
 </head>
 
 <body>
     <header class="header">
         <div class="header-container">
             <div class="header-container__left">
-                <img src="assets/icons/destiny-icon.png" class="header__logo" alt="Website logo">
-                <h2 class="header__logo-text">Financial Calculator</h2>
+                <img src="assets/icons/logo-2.svg" class="header__logo" alt="Website logo">
+                <p class="header__logo-text">savr</p>
             </div>
             <div class="header-container__right">
                 <nav class="header__nav">
@@ -38,9 +39,33 @@
                         </li>
                         <li class="header__nav-item"><a href="why-invest.html" class="header__nav-link">Why Invest</a>
                         </li>
-                        <li class="header__nav-item"><a href="other-projects.html" class="header__nav-link">Other
-                                Projects</a></li>
                     </ul>
+                </nav>
+                <nav class="header__nav-mobile">
+                    <div class="header__hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="header__nav-mobile-menu">
+                        <a href="index.html" class="header__accordion-item">
+                            <p class="header__accordion-title">Home</p>
+                        </a>
+                        <div class="header__accordion-item">
+                            <p class="header__accordion-title">Calculators</p>
+                            <div class="header__accordion-content">
+                                <div>
+                                    <a href="rd-calculator.html" class="header__accordion-content-title">RD Calculator</a>
+                                    <a href="fd-calculator.html" class="header__accordion-content-title">FD Calculator</a>
+                                    <a href="emi-calculator.html" class="header__accordion-content-title">EMI Calculator</a>
+                                </div>
+                            </div>
+                            <img class="header__accordion-chevron" src="assets/icons/chevron.svg" alt="chevron">
+                        </div>
+                        <a href="why-invest.html" class="header__accordion-item">
+                            <p class="header__accordion-title">Why Invest</p>
+                        </a>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -53,7 +78,7 @@
                 <a class="banner__btn">Calculators</a>
             </div>
             <div class="banner-container__right">
-                <img class="banner__img" src="assets/images/tree.svg" alt="Tree Image">
+                <img class="banner__img" src="assets/icons/money-tree.svg" alt="Tree Image">
             </div>
         </div>
     </div>
@@ -113,7 +138,7 @@
                     <div class="calculator__item">
                         <div class="calculator__item-top">
                             <div class="calculator__item-top-left">
-                                <p class="calculator__item-label">Time Period</p>
+                                <p class="calculator__item-label">Time</p>
                                 <div class="calculator__time-btn-container">
                                     <button class="calculator__time-btn">Years</button>
                                     <img class="chevron" src="assets/icons/chevron-black.svg" alt="Chevron Icon">
@@ -174,7 +199,7 @@
     <section class="content-block grey-bg">
         <div class="content-block-container">
             <h2 class="content-block__title">What are fixed deposits (FD)?</h2>
-            <p class="content-block__desc">Here are some examples that can help set you a goal</p>
+            <p class="content-block__desc">A Fixed Deposit (FD) is a type of investment offered by banks and financial institutions where you deposit a lump sum amount for a fixed tenure at a predetermined interest rate. In return, the bank pays you interest on the principal amount over the chosen period, and at the end of the term, you get back your principal along with the accrued interest.</p>
         </div>
     </section>
     <section class="content-block" id="calculators">
@@ -209,27 +234,27 @@
         <div class="footer-container">
             <div class="footer__top">
                 <div class="footer__top-left">
-                    <img src="assets/icons/destiny-icon.png" class="footer__logo" alt="Website Logo">
-                    <h2 class="footer__logo-text">Financial Calculator</h2>
+                    <img src="assets/icons/logo-2.svg" class="footer__logo" alt="Website Logo">
+                    <p class="footer__logo-text">savr</p>
                 </div>
                 <div class="footer__top-right">
-                    <div class="footer__column">
-                        <a href="index.html" class="footer__column-title">Home</a>
+                    <a href="index.html" class="footer__accordion-item">
+                        <p class="footer__accordion-title">Home</p>
+                    </a>
+                    <div class="footer__accordion-item">
+                        <p class="footer__accordion-title">Calculators</p>
+                        <div class="footer__accordion-content">
+                            <div>
+                                <a href="fd-calculator.html" class="footer__accordion-content-title">FD Calculator</a>
+                                <a href="rd-calculator.html" class="footer__accordion-content-title">RD Calculator</a>
+                                <a href="emi-calculator.html" class="footer__accordion-content-title">EMI Calculator</a>
+                            </div>
+                        </div>
+                        <img class="footer__accordion-chevron" src="assets/icons/chevron.svg" alt="chevron">
                     </div>
-                    <div class="footer__column">
-                        <p class="footer__column-title">Calculators</p>
-                        <a href="rd-calculator.html" class="footer__column-item">RD Calculator</a>
-                        <a href="fd-calculator.html" class="footer__column-item">FD Calculator</a>
-                        <a href="emi-calculator.html" class="footer__column-item">EMI Calculator</a>
-                    </div>
-                    <div class="footer__column">
-                        <a href="why-invest.html" class="footer__column-title">Why Invest</a>
-                    </div>
-                    <div class="footer__column">
-                        <a href="other-projects.html" class="footer__column-title">Other Projects</a>
-                        <a href="https://karthik-2906.github.io/verity-simulator/" target="_blank"
-                            class="footer__column-item">Destiny 2 Verity Simulator</a>
-                    </div>
+                    <a href="why-invest.html" class="footer__accordion-item">
+                        <p class="footer__accordion-title">Why Invest</p>
+                    </a>
                 </div>
             </div>
             <div class="footer__bottom">
