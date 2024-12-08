@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Finance Calculator</title>
+    <title>savr - Finance Calculator</title>
     <meta name="description" content="A simple website to help calculate different financial instruments">
     <meta name="author" content="karthik-2906">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/icons/logo-2.svg" type="image/x-icon">
 </head>
 
 <body>
     <header class="header">
         <div class="header-container">
             <div class="header-container__left">
-                <img src="assets/icons/destiny-icon.png" class="header__logo" alt="Website logo">
-                <h2 class="header__logo-text">Financial Calculator</h2>
+                <img src="assets/icons/logo-2.svg" class="header__logo" alt="Website logo">
+                <p class="header__logo-text">savr</p>
             </div>
             <div class="header-container__right">
                 <nav class="header__nav">
@@ -38,9 +39,33 @@
                         </li>
                         <li class="header__nav-item"><a href="why-invest.html" class="header__nav-link">Why Invest</a>
                         </li>
-                        <li class="header__nav-item"><a href="other-projects.html" class="header__nav-link">Other
-                                Projects</a></li>
                     </ul>
+                </nav>
+                <nav class="header__nav-mobile">
+                    <div class="header__hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="header__nav-mobile-menu">
+                        <a href="index.html" class="header__accordion-item">
+                            <p class="header__accordion-title">Home</p>
+                        </a>
+                        <div class="header__accordion-item">
+                            <p class="header__accordion-title">Calculators</p>
+                            <div class="header__accordion-content">
+                                <div>
+                                    <a href="rd-calculator.html" class="header__accordion-content-title">RD Calculator</a>
+                                    <a href="fd-calculator.html" class="header__accordion-content-title">FD Calculator</a>
+                                    <a href="emi-calculator.html" class="header__accordion-content-title">EMI Calculator</a>
+                                </div>
+                            </div>
+                            <img class="header__accordion-chevron" src="assets/icons/chevron.svg" alt="chevron">
+                        </div>
+                        <a href="why-invest.html" class="header__accordion-item">
+                            <p class="header__accordion-title">Why Invest</p>
+                        </a>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -53,7 +78,7 @@
                 <a class="banner__btn">Calculators</a>
             </div>
             <div class="banner-container__right">
-                <img class="banner__img" src="assets/images/tree.svg" alt="Tree Image">
+                <img class="banner__img" src="assets/icons/money-tree.svg" alt="Tree Image">
             </div>
         </div>
     </div>
@@ -61,6 +86,7 @@
         <div class="content-block-container teaser">
             <div class="content-block__left">
                 <img class="teaser__img" src="assets/images/teaser-2.jpg" alt="Piggy Bank">
+                <img class="teaser__img-tab" src="assets/images/teaser-2.webp" alt="Piggy Bank">
             </div>
             <div class="content-block__right">
                 <h2 class="teaser__title">Why Invest?</h2>
@@ -180,7 +206,8 @@
     </section>
     <section class="content-block">
         <div class="content-block-container feature-list">
-            <div class="content-block-left"><img class="image-left" src="assets/images/handshake.jpg"></div>
+            <div class="content-block-left"><img class="feature-list-image-left" src="assets/images/handshake.jpg"><img
+                    class="feature-list-image-left-tab" src="assets/images/handshake-2.jpg"></div>
             <div class="content-block-right">
                 <h2 class="feature-list__title">Why use our Calculators</h2>
                 <div class="feature-list__list">
@@ -235,8 +262,8 @@
                         <h2 class="card__title">FD Calculator</h2>
                         <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="fd-calculator.html" class="card-link"><span class="card-link-text">Calculate Now</span><img
-                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                        <a href="fd-calculator.html" class="card-link"><span class="card-link-text">Calculate
+                                Now</span><img class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
                     </div>
                 </div>
                 <div class="card-container">
@@ -245,8 +272,8 @@
                         <h2 class="card__title">RD Calculator</h2>
                         <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="rd-calculator.html" class="card-link"><span class="card-link-text">Calculate Now</span><img
-                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                        <a href="rd-calculator.html" class="card-link"><span class="card-link-text">Calculate
+                                Now</span><img class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
                     </div>
                 </div>
                 <div class="card-container">
@@ -255,8 +282,8 @@
                         <h2 class="card__title">EMI Calculator</h2>
                         <p class="card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="emi-calculator.html" class="card-link"><span class="card-link-text">Calculate Now</span><img
-                                class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
+                        <a href="emi-calculator.html" class="card-link"><span class="card-link-text">Calculate
+                                Now</span><img class="card-link-icon" src="assets/icons/arrow-right.svg"></a>
                     </div>
                 </div>
             </div>
@@ -266,27 +293,27 @@
         <div class="footer-container">
             <div class="footer__top">
                 <div class="footer__top-left">
-                    <img src="assets/icons/destiny-icon.png" class="footer__logo" alt="Website Logo">
-                    <h2 class="footer__logo-text">Financial Calculator</h2>
+                    <img src="assets/icons/logo-2.svg" class="footer__logo" alt="Website Logo">
+                    <p class="footer__logo-text">savr</p>
                 </div>
                 <div class="footer__top-right">
-                    <div class="footer__column">
-                        <a href="index.html" class="footer__column-title">Home</a>
+                    <a href="index.html" class="footer__accordion-item">
+                        <p class="footer__accordion-title">Home</p>
+                    </a>
+                    <div class="footer__accordion-item">
+                        <p class="footer__accordion-title">Calculators</p>
+                        <div class="footer__accordion-content">
+                            <div>
+                                <a href="fd-calculator.html" class="footer__accordion-content-title">FD Calculator</a>
+                                <a href="rd-calculator.html" class="footer__accordion-content-title">RD Calculator</a>
+                                <a href="emi-calculator.html" class="footer__accordion-content-title">EMI Calculator</a>
+                            </div>
+                        </div>
+                        <img class="footer__accordion-chevron" src="assets/icons/chevron.svg" alt="chevron">
                     </div>
-                    <div class="footer__column">
-                        <p class="footer__column-title">Calculators</p>
-                        <a href="rd-calculator.html" class="footer__column-item">RD Calculator</a>
-                        <a href="fd-calculator.html" class="footer__column-item">FD Calculator</a>
-                        <a href="emi-calculator.html" class="footer__column-item">EMI Calculator</a>
-                    </div>
-                    <div class="footer__column">
-                        <a href="why-invest.html" class="footer__column-title">Why Invest</a>
-                    </div>
-                    <div class="footer__column">
-                        <a href="other-projects.html" class="footer__column-title">Other Projects</a>
-                        <a href="https://karthik-2906.github.io/verity-simulator/" target="_blank"
-                            class="footer__column-item">Destiny 2 Verity Simulator</a>
-                    </div>
+                    <a href="why-invest.html" class="footer__accordion-item">
+                        <p class="footer__accordion-title">Why Invest</p>
+                    </a>
                 </div>
             </div>
             <div class="footer__bottom">

@@ -87,7 +87,6 @@
             const value = slider.value;
         
             const percentage = ((value - min) / (max - min)) * 100;
-            console.log(percentage)
         
             thumb.style.left = `calc(${percentage}% - ${thumb.offsetWidth / 2}px)`;
         }        
@@ -153,7 +152,6 @@
         toggleTimeDropdown() {
             this.timeBtnDropdown.classList.toggle("show");
             this.timeBtn.nextElementSibling.classList.toggle("rotate");
-            console.log("Triggered")
         }
 
         updateTimeDropdown(durationType) {
