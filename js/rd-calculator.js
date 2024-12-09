@@ -1,5 +1,5 @@
 (function () {
-    class fdCalculator {
+    class rdCalculator {
         constructor() {
             this.investmentInputBox = document.getElementById("totalInvestmentInput");
             this.investmentSlider = document.getElementById("totalInvestmentSlider");
@@ -24,7 +24,6 @@
             this.timeBtnDropdown = document.querySelector(".calculator__time-btn-dropdown");
             this.yearsBtn = document.getElementsByClassName("calculator__time-btn-item")[0];
             this.monthsBtn = document.getElementsByClassName("calculator__time-btn-item")[1];
-            this.daysBtn = document.getElementsByClassName("calculator__time-btn-item")[2];
 
             this.investment = document.getElementsByClassName("calculator__results-number")[0];
             this.returns = document.getElementsByClassName("calculator__results-number")[1];
@@ -36,9 +35,9 @@
 
         resetCalculator() {
             const defaults = {
-                investment: 100000,
+                investment: 50000,
                 interest: 6.5,
-                time: 5,
+                time: 3,
             };
 
             this.investmentInputBox.value = defaults.investment;
@@ -58,7 +57,15 @@
         }
 
         updateAllResults() {
-            const endInvestment = Number(this.investmentInputBox.value) || 0;
+            let time = parseFloat(this.timeInputBox.value) || 0;
+            let endInvestment;
+
+            if (this.timeBtn.textContent == 'Months') {
+                endInvestment = Number(this.investmentInputBox.value) * time || 0;
+            } else {
+                endInvestment = Number(this.investmentInputBox.value) * time * 12 || 0;
+            }
+
             this.investment.textContent = `₹ ${endInvestment.toLocaleString('en-IN')}`;
 
             const interest = this.calculateInterest();
@@ -114,7 +121,7 @@
         }
 
         updateInvestmentInputBox() {
-            this.investmentInputBox.value = Math.floor(this.investmentSlider.value / 5000) * 5000;
+            this.investmentInputBox.value = Math.floor(this.investmentSlider.value / 500) * 500;
             this.investmentliderProgress.style.width = ((this.investmentSlider.value - this.investmentSlider.min) / (this.investmentSlider.max - this.investmentSlider.min)) * 100 + "%";
             this.updateThumbPosition(this.investmentSlider, this.investmentThumb);
         }
@@ -149,45 +156,51 @@
         }
 
         updateTimeDropdown(durationType) {
-            const maxValues = { Years: 25, Months: 60, Days: 31 };
+            const maxValues = { Years: 10, Months: 60 };
+            const minValues = { Years: 1, Months: 3 };
             this.timeInputBox.setAttribute("max", maxValues[durationType]);
+            this.timeInputBox.setAttribute("min", minValues[durationType]);
             this.timeSlider.setAttribute("max", maxValues[durationType]);
+            this.timeSlider.setAttribute("min", minValues[durationType]);
             this.timeBtn.textContent = durationType;
-            this.timeInputBox.value = 5;
-            this.timeSlider.value = 5;
+            this.timeInputBox.value = 3;
+            this.timeSlider.value = 3;
             this.updateThumbPosition(this.timeSlider, this.timeThumb);
             this.timeSliderProgress.style.width = ((this.timeSlider.value - this.timeSlider.min) / (this.timeSlider.max - this.timeSlider.min)) * 100 + "%";
             this.updateAllResults();
         }
 
         calculateInterest() {
-            const investment = parseFloat(this.investmentInputBox.value) || 0; // Principal Amount (P)
+            const monthlyDeposit = parseFloat(this.investmentInputBox.value) || 0; // Monthly Deposit (P)
             const annualInterestRate = parseFloat(this.interestInputBox.value) || 0; // Annual Interest Rate (r)
-            let time = parseFloat(this.timeInputBox.value) || 0; // Time Period in Years (t);
-            console.log(time)
-            if (this.timeBtn.textContent == 'Months' && time < 12) {
-                return Math.round(investment * annualInterestRate * time / 100 / 12);
-            } else if (this.timeBtn.textContent == 'Months' && time >= 12) {
-                time /= 12;
-            } else if (this.timeBtn.textContent == 'Days') {
-                return Math.round(investment * annualInterestRate * time / 100 / 365);
+            let timeInYears = parseFloat(this.timeInputBox.value) || 0; // Tenure in Years (t)
+        
+            if (this.timeBtn.textContent === 'Months') {
+                timeInYears /= 12;
             }
-
-            const compoundingFrequency = 4; // n = 4 (quarterly compounding)
-
-            const ratePerPeriod = annualInterestRate / 100 / compoundingFrequency;
-
-            const maturityAmount = investment * Math.pow((1 + ratePerPeriod), compoundingFrequency * time);
-
-            const interest = maturityAmount - investment;
-
-            return Math.round(interest);
-        }
+        
+            const totalMonths = timeInYears * 12;
+            const compoundingFrequency = 4; // Quarterly compounding (n = 4)
+            const ratePerPeriod = annualInterestRate / 100 / compoundingFrequency; 
+        
+            let totalMaturity = 0;
+        
+            for (let month = 1; month <= totalMonths; month++) {
+                const remainingTenureInYears = (totalMonths - month + 1) / 12;
+                const maturityValue = monthlyDeposit * Math.pow((1 + ratePerPeriod), compoundingFrequency * remainingTenureInYears);
+                totalMaturity += maturityValue;
+            }
+        
+            const totalInvestment = monthlyDeposit * totalMonths;
+            const interestEarned = totalMaturity - totalInvestment;
+        
+            return Math.round(interestEarned);
+        }        
 
         bindingEvents() {
             this.investmentInputBox.addEventListener('keydown', (event) => this.preventInvalidCharacters(event));
-            this.investmentInputBox.addEventListener('input', () => { this.checkInputError(this.investmentInputBox, this.investmentErrorMsg, 5000), this.updateInvestmentSlider(), this.updateAllResults() });
-            this.investmentSlider.addEventListener('input', () => { this.checkInputError(this.investmentInputBox, this.investmentErrorMsg, 5000), this.updateInvestmentInputBox(), this.updateAllResults() });
+            this.investmentInputBox.addEventListener('input', () => { this.checkInputError(this.investmentInputBox, this.investmentErrorMsg, 500), this.updateInvestmentSlider(), this.updateAllResults() });
+            this.investmentSlider.addEventListener('input', () => { this.checkInputError(this.investmentInputBox, this.investmentErrorMsg, 500), this.updateInvestmentInputBox(), this.updateAllResults() });
 
             this.interestInputBox.addEventListener('keydown', (event) => this.preventInvalidCharacters(event));
             this.interestInputBox.addEventListener('input', () => { this.checkInputError(this.interestInputBox, this.interestErrorMsg, 1), this.updateInterestSlider(), this.updateAllResults() });
@@ -200,7 +213,6 @@
             this.timeBtnContainer.addEventListener('click', () => this.toggleTimeDropdown());
             this.yearsBtn.addEventListener('click', () => this.updateTimeDropdown('Years'));
             this.monthsBtn.addEventListener('click', () => this.updateTimeDropdown('Months'));
-            this.daysBtn.addEventListener('click', () => this.updateTimeDropdown('Days'));
         }
 
         init() {
@@ -229,7 +241,7 @@
         }
     }
     window.addEventListener("DOMContentLoaded", () => {
-        const fdCalculatorObj = new fdCalculator();
-        fdCalculatorObj.init();
+        const rdCalculatorObj = new rdCalculator();
+        rdCalculatorObj.init();
     });
 })();
