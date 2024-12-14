@@ -772,6 +772,10 @@ a {
     font-size: 1rem;
 }
 
+.footer__text > a {
+    color: #ffffff93;
+}
+
 .calculator-container {
     /* border: 2px solid var(--color-grey); */
     border-radius: 20px;
