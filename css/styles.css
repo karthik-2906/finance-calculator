@@ -565,6 +565,10 @@ a {
     margin-top: auto;
 }
 
+.teaser__btn {
+    margin-top: unset !important;
+}
+
 .card-link-text {
     color: var(--color-black);
     font-weight: 500;
