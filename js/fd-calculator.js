@@ -59,13 +59,13 @@
 
         updateAllResults() {
             const endInvestment = Number(this.investmentInputBox.value) || 0;
-            this.investment.textContent = `₹ ${endInvestment.toLocaleString('en-IN')}`;
+            this.investment.textContent = `₱ ${endInvestment.toLocaleString('en-US')}`;
 
             const interest = this.calculateInterest();
-            this.returns.textContent = `₹ ${interest.toLocaleString('en-IN')}`;
+            this.returns.textContent = `₱ ${interest.toLocaleString('en-US')}`;
 
             const totalAmount = interest + endInvestment;
-            this.totalAmount.textContent = `₹ ${totalAmount.toLocaleString('en-IN')}`;
+            this.totalAmount.textContent = `₱ ${totalAmount.toLocaleString('en-US')}`;
 
             if (this.chartDonut) {
                 this.chartDonut.data.datasets[0].data = [endInvestment, interest];
