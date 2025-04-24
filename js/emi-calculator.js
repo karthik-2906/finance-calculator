@@ -65,16 +65,16 @@
                 time *= 12;
             }
 
-            this.loan.textContent = `₱ ${loanAmount.toLocaleString('en-US')}`;
+            this.loan.textContent = `₹ ${loanAmount.toLocaleString('en-IN')}`;
 
             const monthlyDeposit = this.calculateMonthlyDeposit();
-            this.monthlyInvestment.textContent = `₱ ${monthlyDeposit.toLocaleString('en-US')}`;
+            this.monthlyInvestment.textContent = `₹ ${monthlyDeposit.toLocaleString('en-IN')}`;
 
             const totalAmount = monthlyDeposit * time;
-            this.totalAmount.textContent = `₱ ${totalAmount.toLocaleString('en-US')}`;
+            this.totalAmount.textContent = `₹ ${totalAmount.toLocaleString('en-IN')}`;
 
             const interest = totalAmount - loanAmount;
-            this.interest.textContent = `₱ ${interest.toLocaleString('en-US')}`;
+            this.interest.textContent = `₹ ${interest.toLocaleString('en-IN')}`;
 
             if (this.chartDonut) {
                 this.chartDonut.data.datasets[0].data = [loanAmount, interest];
